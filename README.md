@@ -15,6 +15,10 @@ The database runs in MongoDB. Make sure you have `mongod` service running. Use t
 ```
 [tbd]
 ```
+You should have a MongoDB database called `fl-news` running on port `27017`
+```
+mongodb://localhost:27017/fl-news
+```
 
 
 ## Frontend
