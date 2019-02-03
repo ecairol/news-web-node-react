@@ -13,10 +13,12 @@
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
     "mongodb": "^3.1.13",
     "mongoose": "^5.4.9"
   },
   "devDependencies": {
+    "@koa/cors": "^2.2.3",
     "nodemon": "^1.18.9"
   }
 }
