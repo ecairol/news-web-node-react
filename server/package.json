@@ -13,9 +13,11 @@
   "dependencies": {
     "bcrypt": "^3.0.3",
     "faker": "^4.1.0",
+    "jsonwebtoken": "^8.4.0",
     "koa": "^2.7.0",
     "koa-body": "^4.0.7",
     "koa-bodyparser": "^4.2.1",
+    "koa-helmet": "^4.0.0",
     "koa-jwt": "^3.5.1",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",

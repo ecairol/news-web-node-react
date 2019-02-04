@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 
 const app = new Koa();
 
+//app.use(Helmet());
 app.use(Cors());
 app.use(koastatic('./build'));
 
