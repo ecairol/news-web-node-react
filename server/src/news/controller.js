@@ -6,6 +6,7 @@ async function findAll (ctx) {
 }
 
 async function create (ctx) {
+  // TODO: Add validation and throw error
   const news = new News(ctx.request.body);
   const savedNews = await news.save();
   ctx.body = savedNews;
@@ -13,7 +14,7 @@ async function create (ctx) {
 
 async function destroy (ctx) {
   const id = ctx.params.id;
-  const news = await New.findById(id);
+  const news = await News.findById(id);
   const deletedNews = await news.remove();
   ctx.body = deletedNews;
 }
