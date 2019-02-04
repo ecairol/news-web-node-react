@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import {API_URL} from '../constants.js';
+import { API_URL } from '../constants.js';
+import { observer, inject } from 'mobx-react';
 
+@inject('news')
+@observer
 class News extends Component {
   state = {
      news: [],
@@ -10,18 +13,9 @@ class News extends Component {
    }
 
   componentDidMount() {
-    this.fetchNews();
-  }
-
-  fetchNews() {
-    return axios.get(`${API_URL}/news`)
-      .then((response) => {
-        const news = response.data;
-        this.setState({ isLoading: false, news});
-      })
-      .catch((error) => {
-        this.setState({ error: error.message });
-      });
+    //this.fetchNews();
+    const newsStore = this.props.news;
+    newsStore.findAll();
   }
 
    render () {
@@ -38,9 +32,9 @@ class News extends Component {
      return (
        <div className="component-news">
         <h1>News</h1>
-        {news.map((n) => 
+        {this.props.news.map((n) => 
           <p key={n._id}>
-            {n.title}
+            {n.title} <small>{n.humanDate}</small>
           </p>
         )}
        </div>
