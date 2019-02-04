@@ -1,0 +1,35 @@
+.app {
+  height: 100%;
+
+  &__main-nav {
+    background: $primary;
+    padding: 20px;
+    border-bottom: 1px solid $tertiary;
+    
+    a {
+      color: $white;
+      padding: 5px;
+      border: 1px solid $white;
+      border-radius: 4px;
+      margin-right: 8px;
+      text-decoration: none;
+      text-align: center;
+      min-width: 80px;
+      transition: all 0.2s;
+      
+      &:hover {
+        background: $white;
+        color: $primary;
+      }
+    }
+  }
+
+  &__main-content {
+    background: $white;
+    border-top: 1px solid $tertiary;
+    border-bottom: 1px solid $tertiary;
+    color: $primary;
+    padding: 80px 20px;
+    margin: 20px auto; 
+  }
+}

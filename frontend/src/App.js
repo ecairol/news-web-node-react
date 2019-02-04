@@ -13,12 +13,18 @@ class App extends Component {
       <Provider store={store}>
         <BrowserRouter>
           <main className="app">
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/login">Login</Link></li>
-            </ul>
-            <Route exact path="/" component={News} />
-            <Route exact path="/login" component={Login} />
+            <nav className="app__main-nav">
+              <div className="container">
+                <Link to="/">Home</Link>
+                <Link to="/login">Login</Link>
+              </div>
+            </nav>
+            <div className="app__main-content">
+              <div className="container">
+                <Route exact path="/" component={News} />
+                <Route exact path="/login" component={Login} />
+              </div>
+            </div>
           </main>
         </BrowserRouter>
       </Provider>

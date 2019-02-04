@@ -1,0 +1,15 @@
+html, body {
+  background: $cloud;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.container {
+  max-width: $container;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
