@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { observer, Provider } from 'mobx-react';
 //import './App.css';
-import News from './news/News';
+import NewsFeed from './news/NewsFeed';
 import Login from './login/Login';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import store from "./stores";
@@ -15,13 +15,13 @@ class App extends Component {
           <main className="app">
             <nav className="app__main-nav">
               <div className="container">
-                <Link to="/">Home</Link>
+                <Link to="/">News</Link>
                 <Link to="/login">Login</Link>
               </div>
             </nav>
             <div className="app__main-content">
               <div className="container">
-                <Route exact path="/" component={News} />
+                <Route exact path="/" component={NewsFeed} />
                 <Route exact path="/login" component={Login} />
               </div>
             </div>
