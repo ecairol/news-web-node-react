@@ -11,6 +11,7 @@
   "author": "ecairol",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^3.0.3",
     "faker": "^4.1.0",
     "koa": "^2.7.0",
     "koa-body": "^4.0.7",

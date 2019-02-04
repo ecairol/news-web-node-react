@@ -8,15 +8,15 @@ async function findAll (ctx) {
 async function create (ctx) {
   // TODO: Add validation and throw error
   const news = new News(ctx.request.body);
-  const savedNews = await news.save();
-  ctx.body = savedNews;
+  const saved = await news.save();
+  ctx.body = saved;
 }
 
 async function destroy (ctx) {
   const id = ctx.params.id;
   const news = await News.findById(id);
-  const deletedNews = await news.remove();
-  ctx.body = deletedNews;
+  const deleted = await news.remove();
+  ctx.body = deleted;
 }
 
 async function update (ctx) {
