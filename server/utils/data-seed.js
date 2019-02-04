@@ -8,6 +8,7 @@ mongoose.connect('mongodb://localhost:27017/fl-news', {useNewUrlParser: true});
 mongoose.connection.once('connected', () => {
   const db = mongoose.connection;
   db.dropDatabase();
+  seedUsers(db);
   seedNews(db);
 
   console.log("MongoDB seeded successfully. Please press Cmd+C.");
@@ -20,4 +21,9 @@ async function seedNews(db) {
   for (i = 0; i < 8; i++) {
     await news.insertOne({ title: faker.company.catchPhrase(), "description": faker.lorem.paragraph(), "date": new Date() });
   }
+}
+
+async function seedUsers(db) {
+  const users = await db.collection('users');
+  await users.insertOne({ username: 'admin', "password": 'secret' });
 }
