@@ -6,10 +6,8 @@ const KoaBody = require('koa-body');
 const Cors = require('@koa/cors');
 const koastatic = require('koa-static');
 const mongoose = require('mongoose');
-//const jwt = require('koa-jwt');
 
 const app = new Koa();
-
 
 app.use(Cors());
 app.use(koastatic('./build'));
