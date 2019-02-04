@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios';
-import {API_URL} from '../constants.js';
 
 class News extends Component {
   state = {

@@ -1,5 +1,7 @@
 import { observable, action, computed } from 'mobx';
 import News from './model';
+import axios from 'axios';
+import {API_URL} from '../../constants.js';
 
 export default class NewsStore {
   @observable
@@ -15,6 +17,21 @@ export default class NewsStore {
     const created = new News(data);
     this.state.list.push(created);
     return created;
+  }
+
+
+  @action
+  settleList(data) {
+    // filter state.list to leave only items not
+    // present in the new data to be merged
+    const filtered = this.state.list.filter(
+      stateItem => !data.find(
+        newItem => newItem._id === stateItem._id
+      )
+    );
+    
+    // .replace() current state.list with two arrays: filtered and data
+    this.state.list.replace(filtered.concat(data)); 
   }
 
   @action
@@ -39,14 +56,14 @@ export default class NewsStore {
 
     return axios.get(`${API_URL}/news`)
       .then((response) => {
-        this.setLoading(false);
-        response.data.map(news => {
-          return this.add(news);
-       })
+        this.settleList(response.data);
       })
       .catch((error) => {
         this.setLoading(false);
         this.setError(error.message);
+      })
+      .finally(() => {
+        this.setLoading(false);
       });
   }
 }
