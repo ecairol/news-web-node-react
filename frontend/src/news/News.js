@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
- 
- class News extends Component {
+import axios from 'axios';
+import {API_URL} from '../constants.js';
+
+class News extends Component {
   state = {
      news: [],
      error: "",
@@ -12,22 +14,32 @@ import React, { Component } from 'react'
   }
 
   fetchNews() {
-    this.setState({ isLoading: true });
-
-    fetch('http://localhost:3001/v1/news')
-      .then((res) => res.json())
-      .then(news => {this.setState({ isLoading: false, news });console.log(">",news)})
-      .catch((error) => this.setState({ error: error.message }));
+    return axios.get(`${API_URL}/news`)
+      .then((response) => {
+        const news = response.data;
+        this.setState({ isLoading: false, news});
+      })
+      .catch((error) => {
+        this.setState({ error: error.message });
+      });
   }
 
    render () {
-    let { news, isLoading, error } = this.state;
-    console.log(news);
+    let { news, error } = this.state;
+
+    if (error) {
+      // TODO: use <Error> component
+      return <div>
+          <h2>Oops! Something went wrong</h2>
+          <p>{this.state.error}</p>
+        </div>
+    }
+    
      return (
-       <div className="component-todos">
+       <div className="component-news">
         <h1>News</h1>
         {news.map((n) => 
-          <p>
+          <p key={n._id}>
             {n.title}
           </p>
         )}

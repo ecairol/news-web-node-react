@@ -1,8 +1,8 @@
 const News = require('./model');
 
 async function findAll (ctx) {
-  const todos = await News.find({})
-  ctx.body = todos
+  const data = await News.find({})
+  ctx.body = data
 }
 
 async function create (ctx) {
