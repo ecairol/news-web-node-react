@@ -24,8 +24,8 @@ export default class NewsStore {
   settleList(data) {
     // filter state.list to leave only items not
     // present in the new data to be merged
-    const filtered = this.state.list.filter(
-      stateItem => !data.find(
+    const filtered = this.state.list.filter(stateItem => 
+      !data.find(
         newItem => newItem._id === stateItem._id
       )
     );
