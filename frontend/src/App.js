@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { observer, Provider } from 'mobx-react';
 //import './App.css';
-import NewsFeed from './components/NewsFeed/NewsFeed';
-import Login from './login/Login';
+import NewsFeed from './components/NewsFeed/component';
+import Login from './components/Login/component';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import store from "./stores";
 

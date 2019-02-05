@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class News extends Component {
+class Login extends Component {
   state = {
      form: null,
      error: "",
@@ -9,11 +9,11 @@ class News extends Component {
 
    render () {
      return (
-       <div className="component-login">
+       <div className="c-login">
         <h1>Login Screen</h1>
        </div>
      )
    }
  }
  
- export default News
+ export default Login

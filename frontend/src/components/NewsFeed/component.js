@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react';
-import NewsFeatured from '../NewsFeatured/NewsFeatured';
-import NewsList from '../NewsList/NewsList';
+import NewsFeatured from '../NewsFeatured/component';
+import NewsList from '../NewsList/component';
 
 @inject('store')
 
