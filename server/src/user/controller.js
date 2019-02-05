@@ -20,9 +20,18 @@ async function auth (ctx) {
   try {
     const user = await User.findOne({ username: data.username }).exec();
 
+    if (!user) {
+      ctx.body = {
+        message: "Authentication failed"
+      };
+      ctx.status = 401;
+      return;
+    }
+
     const result = await new Promise((resolve, reject) => {
       bcrypt.compare(data.password, user.password, function(err, isMatch) {
         if (!err && isMatch) {
+          // TODO: Implement secret in .env file
           const token = jsonwebtoken.sign({ username: user.username }, "G4gRG9lIiviYWRtaW5iOnRydwUsImp8aSi6IjF2Nz8l");
           resolve({
             body: token,
@@ -30,7 +39,9 @@ async function auth (ctx) {
           });
         } else {
           reject({
-            body: "Authentication failed",
+            body: {
+              message: "Authentication failed"
+            },
             status: 401
           });
         }

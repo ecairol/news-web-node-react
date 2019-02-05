@@ -23,3 +23,11 @@ html, body {
   margin-right: auto;
   display: flex;
 }
+
+.error {
+  color: $error;
+}
+
+.success {
+  color: $success;
+}

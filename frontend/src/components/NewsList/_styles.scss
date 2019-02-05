@@ -10,4 +10,7 @@
     border: 1px solid $tertiary;
     margin-bottom: 5px;
   }
+  @media (max-width: $screen-sm) {
+    max-height: none;
+  }
 }

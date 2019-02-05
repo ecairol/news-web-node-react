@@ -7,12 +7,6 @@ import NewsList from '../NewsList/component';
 
 @observer
 class NewsFeed extends Component {
-  state = {
-     news: [],
-     error: "",
-     isLoading: false
-   }
-
   componentDidMount() {
     const newsStore = this.props.store.news;
     newsStore.findAll();
