@@ -13,7 +13,8 @@ $ npm run dev
 The database runs in MongoDB. Make sure you have `mongod` service running. Use the following script to create and seed the database:
 
 ```
-npm run seed
+$ cd server
+$ npm run seed
 ```
 After running this commenda should have a MongoDB database called `fl-news`.
 
