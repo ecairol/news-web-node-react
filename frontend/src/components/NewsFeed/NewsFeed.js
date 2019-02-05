@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react';
+import NewsFeatured from '../NewsFeatured/NewsFeatured';
+import NewsList from '../NewsList/NewsList';
 
 @inject('store')
 
@@ -19,7 +21,6 @@ class NewsFeed extends Component {
    render () {
     const { list, error } = this.props.store.news.state;
     const { featured } = this.props.store.news;
-    console.log(">",featured);
 
     if (error) {
       // TODO: use <Error> component
@@ -30,22 +31,9 @@ class NewsFeed extends Component {
     }
   
      return (
-      <div className="c-news">
-        <div className="c-news__featured">
-          {featured.map((n) => 
-            <div className="featured" key={n._id}>
-              {n.title} <small>{n.humanDate}</small>
-            </div>
-          )}
-        </div>
-
-        <div className="c-news__list">
-          {list.map((n) => 
-            <div className="thumbnail" key={n._id}>
-              {n.title} <small>{n.humanDate}</small>
-            </div>
-          )}
-        </div>
+      <div className="c-news-feed">
+        <NewsFeatured news={featured} />
+        <NewsList news={list} />
       </div>
      )
    }

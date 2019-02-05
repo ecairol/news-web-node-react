@@ -1,0 +1,13 @@
+.c-news-list {
+  border: 1px solid $tertiary;
+  flex: 50% 0;
+  padding: 8px;
+  max-height: 400px;
+  overflow: auto;
+
+  &__box {
+    padding: 5px;
+    border: 1px solid $tertiary;
+    margin-bottom: 5px;
+  }
+}

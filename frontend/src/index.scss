@@ -3,4 +3,6 @@
 @import './styles/base';
 @import './styles/app';
 
-@import './news/styles';
+@import './components/NewsFeed/styles';
+@import './components/NewsFeatured/styles';
+@import './components/NewsList/styles';
