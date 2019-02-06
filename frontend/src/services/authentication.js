@@ -5,3 +5,7 @@ export const isAuthenticated = () => {
 export const storeToken = (token) => {
   localStorage.setItem('authtoken', token);
 }
+
+export const logout = () => {
+  localStorage.removeItem('authtoken');
+}
