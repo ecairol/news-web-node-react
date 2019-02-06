@@ -9,7 +9,7 @@
   overflow: hidden;
 
   .slick-slider {
-    height: 93%;
+    height: 97%;
     .slick-arrow {
       display: none !important;
     }
@@ -65,6 +65,9 @@
   @media (max-width: $screen-sm) {
     &__title small {
       max-height: 26vh;
+    }
+    .slick-slider {
+      
     }
   }
 }

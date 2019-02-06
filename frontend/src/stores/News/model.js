@@ -3,19 +3,20 @@ import moment from 'moment';
 
 export default class News {
   constructor(data) {
-    const { _id, title, description, date, image } = data;
+    const { _id, title, description, date, image, featured } = data;
 
     extendObservable(this, {
       _id,
       title,
       description,
       date,
-      image
+      image,
+      featured
     })
   }
 
   @computed
   get humanDate() {
-    return moment(this.date).format("MMM Do YY");
+    return moment(this.date).fromNow();
   }
 }

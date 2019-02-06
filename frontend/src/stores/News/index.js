@@ -12,7 +12,8 @@ export default class NewsStore {
       title: "",
       description: "",
       image: "",
-      date: ""
+      date: "",
+      featured: false
     },
     error: false,
     isLoading: false,
@@ -97,7 +98,7 @@ export default class NewsStore {
   get featured() {
     // TODO: Filter state.list to actually filter by news.isFeatured
     return this.state.list.filter((item) => {
-      return item.title[0] === "D";
+      return item.featured;
     });
   }
 
@@ -105,7 +106,7 @@ export default class NewsStore {
   get nonFeatured() {
     // TODO: Filter state.list to actually filter by news.isFeatured
     return this.state.list.filter((item) => {
-      return item.title[0] !== "D";
+      return !item.featured;
     });
   }
 

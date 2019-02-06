@@ -1,13 +1,5 @@
 # News Manager/Viewer
 
-## Backend
-The backend is implement in NodeJS using Koa framework. It runs on port `3001`. To start the backend:
-
-```
-$ cd server
-$ npm run dev
-```
-
 ## Database
 
 The database runs in MongoDB. Make sure you have `mongod` service running. Use the following script to create and seed the database:
@@ -17,6 +9,15 @@ $ cd server
 $ npm run seed
 ```
 After running this commenda should have a MongoDB database called `fl-news`.
+
+
+## Backend
+The backend is implement in NodeJS (`v10.12`) using Koa framework. It runs on port `3001`. To start the backend:
+
+```
+$ cd server
+$ npm run dev
+```
 
 
 ## Frontend
@@ -39,6 +40,8 @@ $ npm start
 - The frontend is still not sending the Bearer token. The backend is expecting it, but I removed that requiremente on the `PUT /news` route, to be able to test.
 
 - Unit and integration testing, at least for login, and to test functionality like featured items
+
+- Datepicker and text area for news content
 
 ### Nice to have
 - Finish the Featured checkbox functionality

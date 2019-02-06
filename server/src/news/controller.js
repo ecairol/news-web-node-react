@@ -28,11 +28,12 @@ async function destroy (ctx) {
 async function update (ctx) {
   const id = ctx.params.id;
   const news = await News.findOne({ _id:id }).exec();
-  const { title, description, date, image } = ctx.request.body;
+  const { title, description, date, image, featured } = ctx.request.body;
   news.title = title;
   news.description = description;
   news.date = date;
   news.image = image;
+  news.featured = featured;
 
   const updated = await news.save();
   ctx.body = updated;
