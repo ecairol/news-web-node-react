@@ -39,7 +39,7 @@ class Admin extends Component {
      return (
       <div className="c-admin page">
         <header className="c-admin__header">
-          <h1>Admin </h1>
+          <h1 className="page__title">Admin</h1>
           <button className="btn btn--link" onClick={this.doLogout}>Logout</button>
         </header>
         <p>

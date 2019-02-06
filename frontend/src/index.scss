@@ -1,9 +1,9 @@
 @import './styles/variables';
 @import './styles/normalize';
-@import './styles/base';
-@import './styles/forms';
-@import './styles/app';
+@import './styles/theme';
 @import './styles/vendor';
+@import './styles/layout';
+@import './styles/forms';
 
 @import './views/Admin/styles';
 @import './views/Login/styles';

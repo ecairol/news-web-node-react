@@ -3,7 +3,7 @@
   border: 1px solid $tertiary;
   border-top: 5px solid $primary;
   font-size: 20px;
-  flex: 50% 0;
+  flex: 48% 0;
   margin-right: 32px;
   padding: 12px 8px 8px;
   overflow: hidden;
@@ -20,8 +20,20 @@
     left: 0;
     right: 0;
     background: rgba(0,0,0,0.5);
+    font-family: 'Oswald', sans-serif;
     padding: 16px 16px 32px;
     color: $white;
+    h3 {
+      margin: 0 0 8px;
+      font-size: 1.8rem;
+    }
+    small {
+      font-family: sans-serif;
+      font-size: 0.9rem;
+      overflow: auto;
+      display: block;
+      max-height: 24vw;
+    }
   }
   &__image {
     background-image: url('http://i.imgur.com/I86rTVl.jpg');
@@ -42,6 +54,11 @@
     }
     &__image {
       height: 42vh;
+    }
+  }
+  @media (max-width: $screen-sm) {
+    &__title small {
+      max-height: 26vh;
     }
   }
 }

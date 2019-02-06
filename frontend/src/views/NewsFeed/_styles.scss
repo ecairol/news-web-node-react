@@ -1,8 +1,12 @@
 .c-news-feed {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   max-width: 100%;
+  .page__title {
+    flex: 1 0 100%;
+  }
 
   @media (max-width: $screen-md) {
     display: block;

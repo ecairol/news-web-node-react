@@ -1,3 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100%;
+}
+
+.page {
+  flex: 1;
+  h1 {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 4px;
+    font-size: 45px;
+  }
+}
+
+.container {
+  max-width: $container;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
 .app {
   height: 100%;
 
@@ -8,9 +32,11 @@
     
     a {
       color: $white;
-      padding: 5px;
       border: 1px solid $white;
       border-radius: 4px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      padding: 5px;
       margin-right: 8px;
       text-decoration: none;
       text-align: center;

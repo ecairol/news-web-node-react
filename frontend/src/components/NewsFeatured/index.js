@@ -24,7 +24,7 @@ class NewsFeatured extends Component {
             return (<div className="c-news-featured__box" key={n._id}>
               <div className="c-news-featured__image" style={imgDiv}></div>
               <div className="c-news-featured__title">
-                <h3>{n.title}</h3>
+                <h3 className="featured">{n.title}</h3>
                 <small>{n.humanDate}. {n.description}</small>
               </div>
             </div>)
