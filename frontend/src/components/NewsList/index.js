@@ -10,12 +10,17 @@ class NewsList extends Component {
       <div className="c-news-list">
         {this.props.news.map((n) => 
           <div className="c-news-list__box" key={n._id}>
-            <small>{n.humanDate}</small>
-            <h3>{n.title}</h3>
-            <p>{n.description}</p>
-            {this.props.editable &&
-              <Link className="btn btn--small" to={`/admin/news/${n._id}`}>Edit</Link>
-            }
+            <div className="c-news-list__box-image">
+              <img src={n.image} />
+            </div>
+            <div className="c-news-list__box-content">
+              <small>{n.humanDate}</small>
+              <h3>{n.title}</h3>
+              <p>{n.description}</p>
+              {this.props.editable &&
+                <Link className="btn btn--small" to={`/admin/news/${n._id}`}>Edit</Link>
+              }
+            </div>
           </div>
         )}
       </div>

@@ -17,22 +17,22 @@ class NewsFeatured extends Component {
     return (
       <div className="c-news-featured">
         <Slider {...slickSettings}>
-          {this.props.news.map((n) => 
-            <div className="c-news-featured__box" key={n._id}>
-              {n.title} <small>{n.humanDate}</small>
-            </div>
-          )}
+          {this.props.news.map((n) => {
+            const imgDiv = {
+              backgroundImage: `url(${n.image})`
+            }
+            return (<div className="c-news-featured__box" key={n._id}>
+              <div className="c-news-featured__image" style={imgDiv}></div>
+              <div className="c-news-featured__title">
+                <h3>{n.title}</h3>
+                <small>{n.humanDate}. {n.description}</small>
+              </div>
+            </div>)
+          })}
         </Slider>
       </div>
     );
   }
-
-  // @action
-  // handleFormSubmit = e => {
-  //   this.props.store.addTodo(this.newTodoTitle);
-  //   this.newTodoTitle = "";
-  //   e.preventDefault();
-  // };
 }
 
 export default NewsFeatured;
