@@ -17,7 +17,20 @@ button, .btn {
   border-radius: 3px;
   cursor: pointer;
   padding: 9px 30px;
+  text-decoration: none;
+  color: $primary;
   &:hover {
     background: $cloud;
+  }
+
+  &.btn--small {
+    padding: 3px 30px;
+  }
+  &.btn--link {
+    background: transparent;
+    border: 0 none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

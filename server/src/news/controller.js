@@ -1,5 +1,11 @@
 const News = require('./model');
 
+async function find (ctx) {
+  const id = ctx.params.id;
+  const data = await News.findOne({ _id:id }).exec();
+  ctx.body = data
+}
+
 async function findAll (ctx) {
   const data = await News.find({})
   ctx.body = data
@@ -14,21 +20,26 @@ async function create (ctx) {
 
 async function destroy (ctx) {
   const id = ctx.params.id;
-  const news = await News.findById(id);
+  const news = await News.findOne({ _id:id }).exec();;
   const deleted = await news.remove();
   ctx.body = deleted;
 }
 
 async function update (ctx) {
   const id = ctx.params.id;
-  const news = await News.findById(id);
-  news.title = news.title + ' updated';
+  const news = await News.findOne({ _id:id }).exec();
+  const { title, description, date, image } = ctx.request.body;
+  news.title = title;
+  news.description = description;
+  news.date = date;
+  news.image = image;
 
-  const updatedNews = await todo.save();
-  ctx.body = updatedNews;
+  const updated = await news.save();
+  ctx.body = updated;
 }
 
 module.exports = {
+  find,
   findAll,
   create,
   destroy,

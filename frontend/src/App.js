@@ -17,14 +17,14 @@ class App extends Component {
             <nav className="app__main-nav">
               <div className="container">
                 <Link to="/">News</Link>
-                <Link to="/admin">Admin</Link>
+                <Link to="/admin/news">Admin</Link>
               </div>
             </nav>
             <div className="app__main-content">
               <div className="container">
                 <Route exact path="/" component={NewsFeed} />
                 <Route exact path="/login" component={Login} />
-                <PrivateRoute exact path="/admin" component={Admin} />
+                <PrivateRoute exact path="/admin/news/:id?" component={Admin} />
               </div>
             </div>
           </main>

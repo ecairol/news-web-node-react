@@ -17,9 +17,9 @@ class LoginForm extends Component {
     e.preventDefault();
     const loginStore = this.props.store.login; 
     loginStore.setError('');
-    const result = await loginStore.onSubmitLogin();
+    await loginStore.onSubmitLogin();
     if (isAuthenticated()) {
-      this.props.history.push('/admin');
+      this.props.history.push('/admin/news');
     }
   }
 

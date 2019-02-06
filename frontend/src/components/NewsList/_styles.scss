@@ -7,9 +7,16 @@
   overflow: auto;
 
   &__box {
-    padding: 5px;
+    padding: 10px 20px;
     border: 1px solid $tertiary;
     margin-bottom: 5px;
+    h3 {
+      margin-top: 0;
+    }
+    small {
+      display: block;
+      text-align: right;
+    }
   }
   @media (max-width: $screen-sm) {
     max-height: none;

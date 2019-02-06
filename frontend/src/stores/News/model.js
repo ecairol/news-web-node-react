@@ -14,7 +14,8 @@ export default class News {
     })
   }
 
-  @computed get humanDate() {
+  @computed
+  get humanDate() {
     return moment(this.date).format("MMM Do YY");
   }
 }

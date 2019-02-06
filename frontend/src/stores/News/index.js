@@ -7,11 +7,18 @@ export default class NewsStore {
   @observable
   state = {
     list: [],
-    selected: null,
+    selected: {
+      _id: "",
+      title: "",
+      description: "",
+      image: "",
+      date: ""
+    },
     error: false,
     isLoading: false,
   }
 
+  // Actions (functions that modify the state)
   @action
   add(data) {
     const created = new News(data);
@@ -19,6 +26,14 @@ export default class NewsStore {
     return created;
   }
 
+  @action
+  replaceItemInList(data) {
+    let listItem = this.state.list.find(item => item._id === data._id);
+    listItem = new News(data);
+    // const created = new News(data);
+    // this.state.list.push(created);
+    return listItem;
+  }
 
   @action
   settleList(data) {
@@ -28,10 +43,12 @@ export default class NewsStore {
       !data.find(
         newItem => newItem._id === stateItem._id
       )
-    );
-    
-    // .replace() current state.list with two arrays: filtered and data
-    this.state.list.replace(filtered.concat(data)); 
+    ).concat(data);
+      
+    this.state.list = [];
+    filtered.map(item => {
+      return this.add(item);
+    });
   }
 
   @action
@@ -44,6 +61,33 @@ export default class NewsStore {
     this.state.error = value;
   }
 
+  @action
+  setSelected(data) {
+    const base = this.state.selected;
+    this.state.selected = new News({...base, ...data});
+  }
+
+  @action.bound
+  onFieldChange(field, value) {
+    this.state.selected[field] = value;
+  };
+  
+  @action.bound
+  async onUpdateForm() {
+    const { _id, title, description, date, image } = this.state.selected;
+    try {
+      const response = await axios.put(
+        `${API_URL}/news/${_id}`, 
+        { title, description, date, image });
+      
+        return this.replaceItemInList(_id, response.data);
+    } catch(error) {
+      this.setError('An error occurred. The news could not be updated');
+    };
+  }
+
+
+  // Computed Properties
   @computed
   get newsLength() {
     return this.state.list.length;
@@ -66,20 +110,32 @@ export default class NewsStore {
   }
 
   // Functions that do not alter the state.
-  findAll() {
+  async findAll() {
     this.setLoading(true);
     this.setError(false);
 
-    return axios.get(`${API_URL}/news`)
-      .then((response) => {
-        this.settleList(response.data);
-      })
-      .catch((error) => {
+    try {
+      const response = await axios.get(`${API_URL}/news`);
+      this.settleList(response.data);
+    } catch(error) {
+      this.setLoading(false);
+      this.setError("The news data could not be retrieved.");
+    } finally {
+      this.setLoading(false);
+    }
+  }
+
+  async load(id) {
+    this.setLoading(true);
+    this.setError(false);
+
+    try {
+      const response = await axios.get(`${API_URL}/news/${id}`);
+      this.setSelected(response.data);
+    } catch(error) {
+      this.setError("The news data could not be retrieved.");
+    } finally {
         this.setLoading(false);
-        this.setError(error.message);
-      })
-      .finally(() => {
-        this.setLoading(false);
-      });
+    };
   }
 }
