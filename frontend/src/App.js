@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { observer, Provider } from 'mobx-react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import PrivateRoute from './components/PrivateRoute/component';
-import NewsFeed from './components/NewsFeed/component';
-import Login from './components/Login/component';
-import Admin from './components/Admin/component';
+import PrivateRoute from './components/PrivateRoute';
 import store from "./stores";
+import Login from './views/Login';
+import Admin from './views/Admin';
+import NewsFeed from './views/NewsFeed';
 
 @observer
 class App extends Component {

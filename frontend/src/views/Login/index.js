@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import LoginForm from '../LoginForm/component';
+import LoginForm from '../../components/LoginForm';
 import { withRouter } from 'react-router-dom';
 import { isAuthenticated } from '../../services/authentication';
 
