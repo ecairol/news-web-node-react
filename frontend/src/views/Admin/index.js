@@ -42,7 +42,7 @@ class Admin extends Component {
           <h1 className="page__title">Admin</h1>
           <button className="btn btn--link" onClick={this.doLogout}>Logout</button>
         </header>
-        <p>
+        <p className="page__ctas">
           <Link className="btn btn--small" to="/admin/news">New</Link>
         </p>
 

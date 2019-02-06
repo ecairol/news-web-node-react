@@ -18,14 +18,13 @@ class NewsEdit extends Component {
     const { selected } = this.props.store.news.state;
 
     return (
-      <div className="c-admin page">
+      <div className="c-news-edit page">
         <header className="c-admin__header">  
-        <h1>Edit News</h1>
+        <h2 className="page__title">Edit News</h2>
+        <Link className="btn btn--small" to="/admin/news">Back</Link>
         </header>
 
         <NewsForm newsStore={this.props.store.news} />
-
-        <Link className="btn btn--small" to="/admin/news">Back</Link>
       </div>
     )
   }

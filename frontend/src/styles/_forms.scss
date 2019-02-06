@@ -15,10 +15,13 @@ button, .btn {
   background: $darkcloud;
   border: 1px solid $tertiary;
   border-radius: 3px;
+  color: $primary;
   cursor: pointer;
+  display: inline-block;
   padding: 9px 30px;
   text-decoration: none;
-  color: $primary;
+  text-align: center;
+  min-width: 128px;
   &:hover {
     background: $cloud;
   }
