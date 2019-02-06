@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Route } from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
 import { isAuthenticated, logout } from '../../services/authentication';
+import { withRouter } from 'react-router-dom';
 import NewsList from '../../components/NewsList';
 import NewsEdit from '../../components/NewsEdit';
 
@@ -24,9 +25,10 @@ class Admin extends Component {
     }
   }
 
-   doLogout() {
+   doLogout = () => {
     if (isAuthenticated()) {
       logout();
+      this.props.history.push('/login');
     }
    }
 
@@ -59,4 +61,4 @@ class Admin extends Component {
    }
  }
  
- export default Admin
+ export default withRouter(Admin)
