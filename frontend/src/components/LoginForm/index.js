@@ -30,7 +30,7 @@ class LoginForm extends Component {
     const { error } = loginStore.state.meta;
     
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} className="c-login-form">
         <div className="form-control">
           <input type="text" name="username" value={username} onChange={(e) => loginStore.onFieldChange(e.target.name, e.target.value)} />
         </div>

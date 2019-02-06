@@ -1,6 +1,7 @@
 @import './styles/variables';
 @import './styles/normalize';
 @import './styles/base';
+@import './styles/forms';
 @import './styles/app';
 @import './styles/vendor';
 
@@ -10,3 +11,4 @@
 
 @import './components/NewsFeatured/styles';
 @import './components/NewsList/styles';
+@import './components/LoginForm/styles';
