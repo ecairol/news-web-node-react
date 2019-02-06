@@ -57,6 +57,14 @@ export default class NewsStore {
     });
   }
 
+  @computed
+  get nonFeatured() {
+    // TODO: Filter state.list to actually filter by news.isFeatured
+    return this.state.list.filter((item) => {
+      return item.title[0] !== "D";
+    });
+  }
+
   // Functions that do not alter the state.
   findAll() {
     this.setLoading(true);

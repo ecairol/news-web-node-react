@@ -13,8 +13,8 @@ class NewsFeed extends Component {
   }
 
    render () {
-    const { list, error } = this.props.store.news.state;
-    const { featured } = this.props.store.news;
+    const { error } = this.props.store.news.state;
+    const { featured, nonFeatured } = this.props.store.news;
 
     if (error) {
       // TODO: use <Error> component
@@ -27,7 +27,7 @@ class NewsFeed extends Component {
      return (
       <div className="c-news-feed page">
         <NewsFeatured news={featured} />
-        <NewsList news={list} />
+        <NewsList news={nonFeatured} />
       </div>
      )
    }
