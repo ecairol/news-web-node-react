@@ -17,10 +17,10 @@ class NewsForm extends Component {
     const { newsStore } = this.props; 
     newsStore.setError('');
     await newsStore.onUpdateForm();
+    this.props.history.push('/admin/news');
   }
 
   render () {
-    //const { form } = this.props;
     const { newsStore } = this.props;
     const { title, description, date, image } = newsStore.state.selected;
     
