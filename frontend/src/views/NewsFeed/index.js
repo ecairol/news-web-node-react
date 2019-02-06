@@ -25,7 +25,7 @@ class NewsFeed extends Component {
     }
   
      return (
-      <div className="c-news-feed">
+      <div className="c-news-feed page">
         <NewsFeatured news={featured} />
         <NewsList news={list} />
       </div>

@@ -32,11 +32,11 @@ class LoginForm extends Component {
     return (
       <form onSubmit={this.onSubmit} className="c-login-form">
         <div className="form-control">
-          <input type="text" name="username" value={username} onChange={(e) => loginStore.onFieldChange(e.target.name, e.target.value)} />
+          <input placeholder="Username" type="text" name="username" value={username} onChange={(e) => loginStore.onFieldChange(e.target.name, e.target.value)} />
         </div>
 
         <div className="form-control">
-          <input type="password" name="password" value={password} onChange={(e) => loginStore.onFieldChange(e.target.name, e.target.value)} />
+          <input placeholder="Password" type="password" name="password" value={password} onChange={(e) => loginStore.onFieldChange(e.target.name, e.target.value)} />
         </div>
 
         <div className="form-control">

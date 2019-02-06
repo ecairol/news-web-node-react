@@ -17,7 +17,7 @@ class Login extends Component {
   
    render () {
      return (
-       <div className="c-login">
+       <div className="c-login page">
         <h1>Login</h1>
         <LoginForm />
        </div>

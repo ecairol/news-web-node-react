@@ -16,7 +16,7 @@ class Admin extends Component {
 
    render () {
      return (
-       <div className="c-admin">
+       <div className="c-admin page">
         <header className="c-admin__header">
           <h1>Admin </h1>
           <a href="#" onClick={this.doLogout}>Logout</a>
