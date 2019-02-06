@@ -9,7 +9,9 @@ class NewsFeatured extends Component {
     const slickSettings = {
       dots: true,
       infinite: true,
-      speed: 500,
+      autoplay: true,
+      speed: 1200,
+      autoplaySpeed: 3000,
       slidesToShow: 1,
       slidesToScroll: 1
     };

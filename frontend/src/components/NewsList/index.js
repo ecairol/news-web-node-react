@@ -14,8 +14,8 @@ class NewsList extends Component {
               <img src={n.image || 'https://www.dike.lib.ia.us/images/sample-1.jpg/image'} />
             </div>
             <div className="c-news-list__box-content">
-              <small>{n.humanDate}</small>
               <h3 className="featured">{n.title}</h3>
+              <small>{n.humanDate}</small>
               <p>{n.description}</p>
               {this.props.editable &&
                 <Link className="btn btn--small" to={`/admin/news/${n._id}`}>Edit</Link>

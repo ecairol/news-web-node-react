@@ -18,7 +18,7 @@
     flex: 0 0 auto;
     width: 20%;
     min-width: 150px;
-    margin-right: 32px;
+    margin-right: 20px;
     img {
       max-width: 100%;
     }
@@ -32,12 +32,14 @@
     p {
       font-family: 'Noto Serif SC', serif;
       font-size: 0.9rem;
+      margin-top: 8px;
     }
     small {
       display: block;
-      text-align: right;
-      margin-bottom: 10px;
+      text-transform: uppercase;
+      margin-top: 8px;
       margin-right: 5px;
+      font-size: 10px;
     }
   }
   @media (max-width: $screen-md) {
