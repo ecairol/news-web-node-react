@@ -6,7 +6,7 @@
   padding: 12px 8px 8px;
   max-height: 400px;
   overflow: auto;
-  min-height: 34vw;
+  min-height: 34.2vw;
 
   &__box {
     padding: 10px 20px;
@@ -36,6 +36,15 @@
     }
   }
   @media (max-width: $screen-md) {
-    max-height: none;
+    max-height: none;    
+    &__box-content small {
+      text-align: left;
+      margin: 5px 0;
+    }
+  }
+  @media (max-width: $screen-xs) {
+    &__box {
+      display: block;
+    }
   }
 }

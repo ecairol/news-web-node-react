@@ -11,7 +11,7 @@ class NewsList extends Component {
         {this.props.news.map((n) => 
           <div className="c-news-list__box" key={n._id}>
             <div className="c-news-list__box-image">
-              <img src={n.image} />
+              <img src={n.image || 'https://www.dike.lib.ia.us/images/sample-1.jpg/image'} />
             </div>
             <div className="c-news-list__box-content">
               <small>{n.humanDate}</small>

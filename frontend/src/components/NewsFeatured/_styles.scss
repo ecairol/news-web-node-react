@@ -27,7 +27,7 @@
     background-image: url('http://i.imgur.com/I86rTVl.jpg');
     background-size: cover;
     display: flex;
-    height: 30vw;
+    height: 32vw;
   }
 
   @media (max-width: $screen-md) {
@@ -39,6 +39,9 @@
       .featured-image {
         height: 37vh;
       }
+    }
+    &__image {
+      height: 42vh;
     }
   }
 }
