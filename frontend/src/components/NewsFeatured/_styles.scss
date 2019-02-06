@@ -7,8 +7,12 @@
   margin-right: 32px;
   padding: 12px 8px 8px;
   overflow: hidden;
+
   .slick-slider {
     height: 93%;
+    .slick-arrow {
+      display: none !important;
+    }
   }
 
   &__box {
